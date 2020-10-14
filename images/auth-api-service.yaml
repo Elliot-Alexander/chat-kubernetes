@@ -16,5 +16,7 @@ spec:
     targetPort: 3000
   selector:
     io.kompose.service: auth-api
+  type: LoadBalancer
+  loadBalancerIP: 34.69.102.186
 status:
   loadBalancer: {}

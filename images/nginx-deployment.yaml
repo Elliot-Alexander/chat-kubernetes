@@ -34,5 +34,8 @@ spec:
         resources: {}
       restartPolicy: Always
       serviceAccountName: ""
-      volumes: null
+      volumes:
+      - name: hostvol
+        hostPath: 
+            path: /images/web
 status: {}

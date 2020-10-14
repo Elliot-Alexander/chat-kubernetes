@@ -16,5 +16,7 @@ spec:
     targetPort: 4000
   selector:
     io.kompose.service: socket-api
+  type: LoadBalancer
+  loadBalancerIP: 34.69.102.186
 status:
   loadBalancer: {}
