@@ -13,7 +13,8 @@ services:
             - instance
 
     auth-api:
-        image: elliotalexander/clustered-api
+        build: 
+            context: ./api
         ports:
         -   3000:3000
         depends_on:
@@ -22,7 +23,8 @@ services:
         -   instance
 
     socket-api:
-        image: elliotalexander/socket-api
+        build: 
+            context: ./socket
         ports:
         -   4000:4000
         networks:
@@ -31,11 +33,10 @@ services:
             -   auth-api
 
     nginx:
-        image: elliotalexander/web-frontend
+        build: 
+            context: ./web
         ports:
             - 80:80
-        volumes:
-            - ./src/:/var/www/html
         depends_on:
             - auth-api
             - socket-api
